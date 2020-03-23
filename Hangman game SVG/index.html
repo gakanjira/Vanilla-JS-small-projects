@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Hangman</title>
+  </head>
+  <body>
+    <h1>Hangman</h1>
+    <p>Find the hidden word - enter the letter</p>
+    <div class="game-container">
+      <svg height="250" width="200" class="figure-container">
+        <!-- szubienica(gallows) od dołu-->
+        <line x1="20" y1="240" x2="100" y2="240" />
+        <line x1="60" y1="20" x2="60" y2="240" />
+        <line x1="60" y1="20" x2="140" y2="20" />
+        <line x1="140" y1="20" x2="140" y2="60" />
+        <!-- head-->
+        <circle cx="140" cy="80" r="20" class="figure-part" />
+        <!-- body -> arms -> legs-->
+        <line x1="140" y1="100" x2="140" y2="170" class="figure-part" />
+        <line x1="140" y1="120" x2="100" y2="150" class="figure-part" />
+        <line x1="140" y1="120" x2="180" y2="150" class="figure-part" />
+        <line x1="140" y1="170" x2="100" y2="210" class="figure-part" />
+        <line x1="140" y1="170" x2="180" y2="210" class="figure-part" />
+      </svg>
+
+      <div class="wrong-letters-container">
+        <div id="worng-letters">
+          <p>Wrong</p>
+          <span></span>
+        </div>
+      </div>
+      <div class="word" id="word"></div>
+    </div>
+
+    <div class="popup-container" id="popup-container">
+      <div class="popup">
+        <h2 id="final-message"></h2>
+        <button id="play-again">Play again</button>
+      </div>
+    </div>
+
+    <div class="notification-container" id="notification-container">
+      <p>You have already enter this letter</p>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
